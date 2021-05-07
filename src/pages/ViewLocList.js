@@ -32,7 +32,7 @@ function ViewLocList() {
 
                     View
                   </div>
-                  <div className="operations">
+                  <div onClick={()=>{ history.push('/AddLocation')}} className="operations">
 
                     add
                 </div>
@@ -48,20 +48,20 @@ function ViewLocList() {
             </Col>
           </Row>
        <Row  className="columnContainer">
-       <Col  className="view_loc_left"xs="6">
+       <Col hidden-xs className="view_loc_left d-none d-md-block"md="6">
       <div>
       <img src={logo} alt="location image" className="img_location"/>
       </div>
        </Col>
-       <Col  className="view_loc_right" xs="6">
+       <Col  className="view_loc_right" md="6" xs="12">
           <div className="loc_row_title">
           <div className="name loc_text_title">name</div>
           <div className="name loc_text_title">address</div>
-          <div className="name loc_text_title">coordinate</div>
+          <div className="name loc_text_title d-md-block d-none">coordinate</div>
           <div className="name loc_text_title">category</div>
           </div>
           <div className="loc_container">
-          <LocationList />
+          <LocationList  />
           </div>
         
           <div className="bottom_nav">

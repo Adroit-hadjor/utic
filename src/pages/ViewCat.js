@@ -2,7 +2,7 @@ import {useLocalStore,useObserver} from 'mobx-react';
 import { Row, Col ,Container,Button} from 'reactstrap';
 import {StoreContext,StoreProvider} from '../components/store'
 import {CatList} from '../components/catList'
-import {CatForm} from '../components/catForm'
+import CatForm from '../components/catForm'
 
 function ViewCat() {
  

@@ -1,7 +1,8 @@
+import React, {useState,useCallback} from 'react';
 import {useLocalStore,useObserver} from 'mobx-react';
 import { Row, Col ,Container,Button} from 'reactstrap';
 import {StoreContext,StoreProvider} from '../components/store'
-import {LocationList} from '../components/locationList'
+import {CatList} from '../components/catList'
 import {CatForm} from '../components/catForm'
 import { default as logo } from '../svgs/destinations.svg';
 import {useHistory} from 'react-router-dom';
@@ -10,7 +11,7 @@ import {useHistory} from 'react-router-dom';
 
 function ViewCatList() {
   const history = useHistory();
-  const handleOnClick = useCallback(() => history.push('/ViewCategories'), [history]);
+  const handleOnClick = useCallback(() => history.push('/ViewLocations'), [history]);
 
     return (
       <> 
@@ -28,7 +29,7 @@ function ViewCatList() {
 
                     View
                   </div>
-                  <div className="operations">
+                  <div onClick={()=>{history.push("/AddCategory")}} className="operations">
 
                     add
                 </div>
@@ -44,20 +45,20 @@ function ViewCatList() {
             </Col>
           </Row>
        <Row  className="columnContainer">
-       <Col  className="view_loc_left"xs="6">
+       <Col  className="view_loc_left d-md-block d-none"md="6" >
       <div>
       <img src={logo} alt="location image" className="img_location"/>
       </div>
        </Col>
-       <Col  className="view_loc_right" xs="6">
+       <Col  className="view_loc_right" xs="12" md="6">
           <div className="loc_row_title">
           <div className="name loc_text_title">name</div>
-          <div className="name loc_text_title">address</div>
-          <div className="name loc_text_title">coordinate</div>
-          <div className="name loc_text_title">category</div>
+          <div className="name loc_text_title"></div>
+          <div className="name loc_text_title"></div>
+          <div className="name loc_text_title"></div>
           </div>
           <div className="loc_container">
-          <LocationList />
+          <CatList />
           </div>
         
           <div className="bottom_nav">

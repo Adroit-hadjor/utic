@@ -1,5 +1,6 @@
 
 @import 'styles.scss';
+@import 'mixins.scss';
 
 
 
@@ -20,12 +21,15 @@
  
   position: relative;
   overflow: hidden;
+  
 
   &_left{
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-
+    @include respond(phones) {
+      padding-top: 150px;
+    }
   }
 
   &_right{
@@ -65,6 +69,9 @@
 flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  @include respond(phones) {
+   width: 100%;
+  }
 }
 
 .loc_row{
@@ -78,7 +85,15 @@ flex-direction: column;
  height:60px;
  background-color: white;
  border-radius: 10px;
+ &:hover{
+   cursor: grab;
+ }
+ @include respond(phones) { 
+  padding: 0px !important;
 
+  width: 80% !important;
+  margin-left: 30px;
+}
 
   &_title{
     width:100%;
@@ -115,6 +130,7 @@ flex-direction: column;
   height:40%;
   overflow-y: scroll;
   margin-top: -70px;
+  
 
 }
 
@@ -136,12 +152,21 @@ font-size: 15px;
   justify-content: space-around;
  // border: 1px solid green;
   align-items: stretch;
+  &:hover{
+    cursor: grab;
+  }
+  @include respond(phones) { 
+    width:50%;
+  }
 }
 
 &_title{
   color:white;
 font-weight: bold;
 font-size: 20px;
+&:hover{
+  cursor: grab;
+}
 }
 }
 
@@ -172,5 +197,70 @@ font-size: 20px;
   border:none;
   border-radius:10px;
 
+  @include respond(phones) { 
+    margin-right: 30px;
+  }
 
+
+}
+
+.loc_left{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loc_cont{
+
+  height:40%;
+  width:40%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+  padding:10px ; 
+  background-color: white;
+  border-radius:10px;
+  color:rgb(66, 65, 65);
+  font-weight: bold;
+}
+
+.middle_form{
+height: 80vh;
+border:15px;
+background-color: white;
+margin :10px;
+}
+
+.loc_form{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+ 
+  height: 80%;
+}
+
+.input_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ 
+  width:90%;
+
+  &_button{
+    
+    height:50px;
+   
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+}
+
+.input_wrapper{
+  width: 70%;
 }

@@ -1,23 +1,29 @@
-import React, {useState,useCallback} from "react";
+import React, {useState,useCallback,useEffect} from "react";
 import { Row, Col ,Container,Button} from 'reactstrap';
 import {FaInstagram,FaTwitter,FaGithub,FaLinkedinIn,FaDev} from 'react-icons/fa';
 import {BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import { default as logo } from '../svgs/travel.svg';
 import {useHistory} from 'react-router-dom';
+import {StoreContext} from '../components/store'
 
 
 
 function App() {
 
-    const history = useHistory();
+  const store = React.useContext(StoreContext);
+  const history = useHistory();
     const handleOnClick = useCallback(() => history.push('/ViewLocations'), [history]);
+
+   
+
+
   return (
-  <Container fluid>
+  <Container  fluid>
       <Row className="header">
-          <Col md="6" className="header_left">
+          <Col xs="12" md="6" className="header_left">
           <img className="header_logo" src={logo} />
           </Col>
-          <Col md="6" className="header_right">
+          <Col xs="12" md="6" className="header_right">
            <div>
               <h1>Hi there, </h1> 
            </div>
