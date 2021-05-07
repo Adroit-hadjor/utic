@@ -4,9 +4,13 @@ import {StoreContext,StoreProvider} from '../components/store'
 import {LocationList} from '../components/locationList'
 import {CatForm} from '../components/catForm'
 import { default as logo } from '../svgs/destinations.svg';
+import {useHistory} from 'react-router-dom';
+
+
 
 function ViewCatList() {
- 
+  const history = useHistory();
+  const handleOnClick = useCallback(() => history.push('/ViewCategories'), [history]);
 
     return (
       <> 
@@ -57,8 +61,8 @@ function ViewCatList() {
           </div>
         
           <div className="bottom_nav">
-           <button   className="btn_view">
-            View Categories
+           <button  onClick={()=>{handleOnClick();}}   className="btn_view">
+            View Locations
            </button>
           
           </div>
